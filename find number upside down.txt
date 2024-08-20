@@ -1,0 +1,32 @@
+Find Number Up Side Down
+A number plate was painted in a workshop and fixed in a house. But the person who fixed the plate made a mistake and fixed the board up side down. Luckily the numbers written on the plate are readable up side down also. It is a two digit number. For example if difference is 72 then the numbers are 08 and 80.
+
+Given the difference between the original number and the number read upside down, write a C++ code to find the numbers
+
+Boundary Conditions
+
+diff>0 and only one number has diff
+
+Input Format
+
+Difference between the original number and number read upside down
+
+Output Format
+
+Print the original number and number read upside down in ascending order separated by a space
+
+
+Program
+  
+m=int(input())
+n=m+1
+d={1:1,2:7,3:3,4:4,5:5,6:9,7:2,8:8,9:6,0:0}
+while True:
+    x=str(n)[::-1]
+    n_x=''
+    for i in x:
+        n_x+=str(d[int(i)])
+    if abs(n-int(n_x))==m:
+        break
+    n+=1
+print(" ".join(sorted([str(n),n_x])))
